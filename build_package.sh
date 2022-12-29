@@ -1,8 +1,8 @@
 #!/bin/bash
 
-version=4.6.0
-sha256_main_source="1ec1cba65f9f20fe5a41fda1586e01c70ea0c9a6d7b67c9e13edf0cfe2239277"
-sha256_contrib_source="1777d5fd2b59029cf537e5fd6f8aa68d707075822f90bde683fcde086f85f7a7"
+version=4.7.0
+sha256_main_source="8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
+sha256_contrib_source="42df840cf9055e59d0e22c249cfb19f04743e1bdad113d31b1573d3934d62584"
 
 echo "Creating build folders"
 rm -rf ./build
@@ -13,7 +13,7 @@ echo ""
 
 echo "Downloading and verifying OpenCV sources"
 echo "Downloading main OpenCV source"
-curl -L -o "./build/opencv_$version.orig.tar.gz" "https://github.com/opencv/opencv/archive/refs/tags/4.6.0.tar.gz"
+curl -L -o "./build/opencv_$version.orig.tar.gz" "https://github.com/opencv/opencv/archive/refs/tags/$version.tar.gz"
 main_sum=$(sha256sum "./build/opencv_$version.orig.tar.gz" | cut -d ' ' -f 1)
 if ! [ "$main_sum" == "$sha256_main_source" ]
 then
@@ -26,7 +26,7 @@ fi
 
 
 echo "Downloading contrib OpenCV source"
-curl -L -o "./build/opencv_$version.orig-contrib.tar.gz" "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.6.0.tar.gz"
+curl -L -o "./build/opencv_$version.orig-contrib.tar.gz" "https://github.com/opencv/opencv_contrib/archive/refs/tags/$version.tar.gz"
 contrib_sum=$(sha256sum "./build/opencv_$version.orig-contrib.tar.gz" | cut -d ' ' -f 1)
 if ! [ "$contrib_sum" == "$sha256_contrib_source" ]
 then

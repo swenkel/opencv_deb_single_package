@@ -49,7 +49,7 @@ Build-Depends: ant [!hppa !hurd-any !kfreebsd-any],
                python3-numpy,
                python3-bs4,
                zlib1g-dev
-Standards-Version: 4.6.0
+Standards-Version: 4.7.0
 Homepage: https://opencv.org
 Rules-Requires-Root: no
 
